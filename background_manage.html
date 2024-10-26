@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/maganer.css" />
+		<script src="js/jquery-3.7.1.js"></script>
+		<script src="js/table.js"></script>
+	</head>
+	<body>
+		<div class="all">
+			<div class="top">
+				<span class="logo">
+					<img src="img/logo.jpg" alt="" />
+					<span class="logo_name">益行天下</span>
+				</span>
+				<span class="top_button">
+					<button>退出管理员系统</button>
+					<button>返回首页</button>
+				</span>
+			</div>
+			<div class="bottom">
+				<div class="menu">
+					<div class="menu_manage" id="menu_manage">菜单管理</div>
+					<ul id="menu_list" style="display:none;">
+						<li id="UserLink">用户信息管理</li>
+						<li id="managerLink">管理员管理</li>
+						<li id="User-RegistrationLink">用户注册管理</li>
+						<li id="ActivityLink">活动管理</li>
+						<li id="EnrollmentLink">报名管理</li>
+						<li id="AnnouncementLink">公告管理</li>
+					</ul>
+				</div>
+				<div class="main">
+					<div class="User" style="display:none;">
+						<div class="main_name">
+							<span>用户信息管理</span>
+							<span>
+								<button id="User_add">添加</button>
+								<button id="User_all_delete">批量操作</button>
+							</span>
+						</div>
+						<iframe src="User.html" frameborder="0"></iframe>
+					</div>
+					<div class="manager" style="display:none;">
+						<div class="main_name">
+							<span>管理员管理</span>
+							<span>
+								<button id="manager_add">添加</button>
+								<button id="manager_all_delete">批量删除</button>
+							</span>
+						</div>
+						<iframe src="manager.html" frameborder="0"></iframe>
+					</div>
+					<div class="User-Registration" style="display:none;">
+						<div class="main_name">
+							<span>用户注册管理</span>
+							<span>
+								<button id="User-Registration_add">添加</button>
+								<button id="User-Registration_all_delete">批量删除</button>
+							</span>
+						</div>
+						<iframe src="User-Registration.html" frameborder="0"></iframe>
+					</div>
+					<div class="Activity" style="display:none;">
+						<div class="main_name">
+							<span>活动管理</span>
+							<span>
+								<button id="Activity_add">添加</button>
+								<button id="Activity_all_delete">批量删除</button>
+							</span>
+						</div>
+						<iframe src="Activity.html" frameborder="0"></iframe>
+					</div>
+					<div class="Enrollment" style="display:none;">
+						<div class="main_name">
+							<span>报名管理</span>
+							<span>
+								<button id="Enrollment_add">添加</button>
+								<button id="Enrollment_all_delete">批量删除</button>
+							</span>
+						</div>
+						<iframe src="Enrollment.html" frameborder="0"></iframe>
+					</div>
+					<div class="Announcement" style="display:none;">
+						<div class="main_name">
+							<span>公告管理</span>
+							<span>
+								<button id="Announcement_add">添加</button>
+								<button id="Announcement_all_delete">批量删除</button>
+							</span>
+						</div>
+						<iframe src="Announcement.html" frameborder="0"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
