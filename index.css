@@ -1,0 +1,218 @@
+#all {
+	margin: 0 auto;
+	width: 1200px;
+	height: 600px;
+}
+
+#menu-div {
+	width: 200px;
+	height: 710px;
+	background-color: skyblue;
+	float: left;
+}
+
+.logo-div {
+	width: 200px;
+	height: 75px;
+	background-color: skyblue;
+}
+
+.my-name span {
+	margin: 0;
+	display: inline-block;
+	border-radius: 10%;
+	background-color: rgba(0, 85, 255, 0.5);
+	color: aliceblue;
+	text-shadow: 0 0 10px rgba(0, 85, 255, 0.7);
+	box-shadow: 0 0 20px 5px rgba(0, 85, 255, 0.7);
+}
+
+.my-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.my-logo>img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-top: 10px;
+	margin-right: 30px;
+}
+
+.menu-ul-div ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-ul-div>ul>li {
+	width: 200px;
+	height: 50px;
+	border: 1px solid gray;
+	background-color: skyblue;
+	line-height: 50px;
+	padding-left: 20px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.info-management {
+	transition: height 0.3s ease-out;
+
+}
+
+.management {
+	position: relative;
+}
+
+.management span::after {
+	content: " ";
+	position: absolute;
+	top: 46%;
+	right: 10%;
+	width: 13px;
+	height: 8px;
+	background: url(img/标签.png) no-repeat;
+	background-position: -66px 0px;
+	transition: transform 0.3s ease;
+}
+
+.arrow-rotated::after {
+	transform: rotate(180deg);
+}
+
+.info-management.active {
+	height: 170px;
+	background-color: lightblue;
+}
+
+.submenu>li:hover {
+	background-color: aqua;
+	color: white;
+}
+
+.submenu.active {
+	display: block;
+}
+
+.submenu li {
+	background-color: lightblue;
+	line-height: 30px;
+	padding: 5px 0;
+	padding-left: 20px;
+	box-sizing: border-box;
+	border-bottom: 1px solid gray;
+}
+
+.submenu li.active-item {
+	background-color: white;
+	color: aqua;
+}
+
+.thing {
+	position: relative;
+}
+
+.thing::after {
+	content: " ";
+	position: absolute;
+	top: 46%;
+	right: 10%;
+	width: 13px;
+	height: 8px;
+	background: url(img/标签.png) no-repeat;
+	background-position: -66px 0px;
+	transition: transform 0.3s ease;
+}
+
+#body-div .student-title {
+	color: #00aaff;
+	margin-left: 50px;
+
+}
+
+#top-div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 75px;
+}
+
+#body-div {
+	float: right;
+	width: 1000px;
+	height: 600px;
+}
+
+#top-div button {
+	border: 1px solid gray;
+	height: 45px;
+	width: 65px;
+	border-radius: 45%;
+	font-weight: bolder;
+}
+
+#top-div .button button:nth-child(1) {
+	margin-right: 20px;
+	width: 90px;
+}
+
+.button {
+	position: relative;
+	margin-right: 45px;
+}
+
+.button span {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #00aaff;
+	color: white;
+}
+
+.message-list {
+	position: absolute;
+	background-color: #55ff7f;
+	border-radius: 10%;
+	top: 3px;
+	left: -260px;
+}
+
+.message-list::before {
+	content: " ";
+	position: absolute;
+	top: 8px;
+	left: 250px;
+	width: 0;
+	height: 0;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+	border-left: 12px solid #55ff7f;
+}
+
+.message-list ul {
+	padding: 10px 0;
+	margin: 0 5px;
+}
+
+.message-list li {
+	border-bottom: 1px solid #00aaff;
+}
+
+.message-list li span {
+	width: 200px;
+	background-color: #55ff7f;
+	color: black;
+	margin-left: 5px;
+}
+
+iframe {
+	width: 1000px;
+	height: 530px;
+}

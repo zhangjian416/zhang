@@ -1,0 +1,130 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#right-under {
+	width: 1000px;
+	height: 530px;
+}
+
+#search-div {
+	height: 60px;
+	background-color: aqua;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#search-div button {
+	width: 50px;
+	height: 35px;
+	font-size: 15px;
+}
+
+.left input {
+	margin-left: 45px;
+	height: 25px;
+	width: 180px;
+}
+
+.left>button:nth-child(2) {
+	background-color: #55ff7f;
+	border-radius: 30%;
+	font-weight: bolder;
+}
+
+#search-div .right button {
+	margin-right: 20px;
+}
+
+.right>button:nth-child(1) {
+	background-color: #00ff00;
+	border-radius: 30%;
+	font-weight: bolder;
+	margin-right: 10px;
+}
+
+.right>button:nth-child(2) {
+	background-color: #ffaaff;
+	border-radius: 30%;
+	color: white;
+	font-weight: bolder;
+	margin-right: 10px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.right>button:last-child {
+	background-color: #ffff00;
+	border-radius: 30%;
+	font-weight: bolder;
+	margin-right: 15px;
+}
+#card-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top:35px;
+}
+#card-div .student ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 185px;
+	height: 300px;
+	margin:0 auto;
+}
+#card-div .student li{
+	line-height: 30px;
+	font-size: 18px;
+}
+.student img{
+	width: 180px;
+	height: 115px;
+	margin-top: 15px;
+	border: 3px solid white;
+	border-radius: 5%;
+}
+.student li:nth-child(3) span{
+	font-weight: bolder;
+	margin-right: 80px;
+}
+
+.student li:last-child span{
+	width: 45px;
+	height: 30px;
+	display: inline-block;
+	background-color: orange;
+	color: white;
+	border-radius: 20%;
+	text-align: center;
+}
+#card-div .student:nth-child(2) li:nth-child(5) span{
+	background-color: skyblue;
+}
+#card-div .student:nth-child(3) li:nth-child(5) span{
+	background-color: skyblue;
+}
+#card-div .student:nth-child(4) li:nth-child(5) span{
+	background-color: orange;
+}
+#card-div .student{
+	width: 210px;
+	height: 285px;
+	background-color: #ffaaff;
+	border-radius: 5%;
+	margin-left: 30px;
+	box-shadow: 8px 12px 15px 0px rgba(0, 0, 0, 0.3);
+}
+#card-div .student:nth-child(2){
+	background-color: #00aaff;
+}
+#card-div .student:nth-child(3){
+	background-color: #00aaff;
+}
+#card-div .student:nth-child(4){
+	background-color:#ffaaff;
+}
+#card-div>.student:hover{
+	transform: scale(1.1);
+}

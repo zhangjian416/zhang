@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/list.css" />
+	</head>
+	<body>
+		<div id="all">
+			<!-- 菜单区域 -->
+			<div id="menu-div">
+				<!-- logo区 -->
+				<div class="logo-div">
+					<div class="my-logo"><img src="img/logo.jpg" alt="" />
+						<div class="my-name">
+							<span>张巧慧</span>
+						</div>
+					</div>
+				</div>
+				<div class="menu-ul-div">
+					<ul>
+						<li class="info-management">
+							<div class="management">
+								<span>信息管理</span>
+							</div>
+							<ul class="submenu" style="display: none;">
+								<li>学生信息管理</li>
+								<li>班级信息管理</li>
+								<li>宿舍信息管理</li>
+							</ul>
+						</li>
+						<li>
+							<div class="thing">事务管理</div>
+						</li>
+						<li>个人设置</li>
+					</ul>
+				</div>
+				<script>
+					// 监听信息管理项的点击事件  
+					document.querySelector('.info-management').addEventListener('click', function(e) {
+						e.stopPropagation();
+						var submenu = this.querySelector('.submenu');
+						var managementSpan = this.querySelector('.management span');
+						submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+						managementSpan.classList.toggle('arrow-rotated');
+						this.classList.toggle('active');
+					});
+
+					document.querySelector('.thing').addEventListener('click', function(e) {
+						e.stopPropagation();
+						this.classList.toggle('arrow-rotated');
+					});
+					// 监听整个文档的点击事件，以在点击子菜单外部时隐藏子菜单  
+					document.addEventListener('click', function(e) {
+						var submenu = document.querySelector('.submenu:not(:hidden)');
+						var infoManagement = document.querySelector('.info-management');
+						if (submenu && !e.target.closest('.info-management')) {
+							submenu.style.display = 'none';
+							infoManagement.classList.remove('active');
+						}
+					});
+
+					// 阻止子菜单项点击时触发外层点击事件，并处理子菜单项的激活状态  
+					document.querySelector('.submenu').addEventListener('click', function(e) {
+						e.stopPropagation();
+						var target = e.target;
+						if (!target.matches('li')) return;
+						var allItems = this.querySelectorAll('li');
+						allItems.forEach(function(item) {
+							item.classList.remove('active-item');
+						});
+						target.classList.add('active-item');
+					});
+				</script>
+			</div>
+			<!-- 右侧 -->
+			<div id="body-div">
+				<div id="top-div">
+					<!-- 标题区 -->
+					<h1 class="student-title">学生信息管理系统</h1>
+					<div class="button">
+						<button class="stationMessage" id="stationMessage">站内信<span>3</span></button>
+						<div class="message-list" style="display: none;">
+							<ul style=" list-style-type: none;">
+								<li>张三 <span>2021-05-11 10：25：30</span></li>
+								<li>张雪 <span>2021-05-05 22：10：20</span></li>
+								<li>李丽 <span>2021-05-02 12：30：10</span></li>
+							</ul>
+						</div>
+						<button>退出</button>
+						<script>
+							var stationMessageBtn = document.getElementById('stationMessage');
+							var messageList = document.querySelector('.message-list');
+							stationMessageBtn.addEventListener('click', function() {
+								messageList.style.display = messageList.style.display === 'none' ? 'block' : 'none';
+							});
+						</script>
+					</div>
+				</div>
+				<iframe src="list.html" frameborder="0"></iframe>
+			</div>
+		</div>
+	</body>
+</html>
