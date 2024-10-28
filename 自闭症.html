@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/video.js"></script>
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				position: relative;
+			}
+			
+			body::before {
+				content: "";
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: url('https://zhangjian416.github.io/zhang/980.jpg') no-repeat center center;
+				background-size: cover;
+				/* 使背景图片覆盖整个页面 */
+				opacity: 0.3;
+				/* 设置透明度 */
+				z-index: -1;
+				/* 确保伪元素位于内容之下 */
+			}
+			
+			.all {
+				width: 1080px;
+				margin: auto;
+			}
+			
+			.header h1 {
+				text-align: center;
+				color: #ffff00;
+				text-shadow: 4px 6px 3px black;
+			}
+			
+			#videoContainer {
+				margin-top: 20px;
+				display: inline-block;
+			}
+			
+			
+			.about {
+				float: right;
+				display: inline-block;
+			}
+			
+			.about p {
+				width: 400px;
+			}
+			
+			.about li {
+				line-height: 22px;
+			}
+			
+			.project {
+				width: 100%;
+				clear: both;
+				padding-top: 10px;
+				overflow: hidden;
+			}
+			
+			.project .title {
+				height: 30px;
+				line-height: 30px;
+				border-bottom: 1px solid #ff0000;
+				font-size: 20px;
+				color: #ff0000;
+			}
+			
+			.project .title span {
+				display: block;
+				width: 100px;
+				height: 30px;
+				border-bottom: 3px solid #dd3b30;
+				text-align: center;
+				float: left;
+			}
+			
+			.project .title a {
+				float: right;
+				font-size: 14px;
+				color: #333;
+			}
+			
+			.project .title a:hover {
+				text-decoration: underline;
+			}
+			
+			.project ul {
+				padding-top: 10px;
+				list-style-type: none;
+			}
+			
+			.project li {
+				width: 240px;
+				margin: 5px;
+				float: left;
+				background: #f2f2f2;
+			}
+			
+			.project li img {
+				width: 240px;
+				height: 230px;
+			}
+			
+			.project li p {
+				width: 230px;
+				margin: auto;
+			}
+			
+			.project li .p1 {
+				font-size: 16px;
+				height: 30px;
+				line-height: 30px;
+				font-weight: bold;
+				overflow: hidden;
+			}
+			
+			.project li .p2 {
+				line-height: 20px;
+				height: 80px;
+				overflow: hidden;
+			}
+			
+			.project li a {
+				display: block;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				border-radius: 15px;
+				border: 1px solid #dd3b30;
+				margin: 10px auto;
+				text-align: center;
+				color: #dd3b30;
+			}
+			
+			.project li a:hover {
+				background: #dd3b30;
+				color: #fff;
+			}
+			
+			.picture .title {
+				height: 30px;
+				line-height: 30px;
+				border-bottom: 1px solid #dd3b30;
+				font-size: 20px;
+				color: #dd3b30;
+			}
+			
+			.picture .title span {
+				display: block;
+				width: 100px;
+				height: 30px;
+				border-bottom: 3px solid #dd3b30;
+				text-align: center;
+				float: left;
+			}
+			
+			.picture .title a {
+				float: right;
+				font-size: 14px;
+				color: #333;
+			}
+			
+			.picture .title a:hover {
+				text-decoration: underline;
+			}
+			
+			.tuji ul {
+				margin-top: 10px;
+				list-style-type: none;
+			}
+			
+			.tuji li {
+				width: 480px;
+				float: left;
+				margin: 10px;
+			}
+			
+			.tuji li img {
+				display: block;
+				width: 480px;
+				height: 320px;
+			}
+			
+			.tuji li p {
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				background: #dd3b30;
+				color: #fff;
+				text-align: center;
+				font-size: 20px;
+				margin: 0;
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded', (event) => {
+					var video = document.getElementById('myVideo');
+					var playPauseButton = document.getElementById('playPauseButton');
+			
+					// 播放/暂停按钮的点击事件处理  
+					playPauseButton.addEventListener('click', function() {
+						if (video.paused || video.ended) {
+							// 如果视频是暂停状态或者已经播放完毕，则播放视频  
+							video.play();
+							playPauseButton.textContent = '暂停';
+						} else {
+							// 如果视频正在播放，则暂停视频  
+							video.pause();
+							playPauseButton.textContent = '播放';
+						}
+					});
+			
+					// 监听视频的播放和暂停事件，以同步按钮文本  
+					video.addEventListener('play', function() {
+							if (playPauseButton.textContent === '播放') {
+								playPauseButton.textContent = '暂停';
+							});
+			
+						video.addEventListener('pause', function() {
+								if (playPauseButton.textContent === '暂停' && !video.ended) {
+									playPauseButton.textContent = '播放';
+								});
+						});
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="all">
+			<div class="header">
+				<h1><big>星星会发光，有爱不孤单</big></h1>
+				<div class="index">
+					<div id="videoContainer">
+						<video id="myVideo" width="640" height="330" controls>
+							<source src="https://zhangjian416.github.io/zhang/video.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="about">
+						<p>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>自闭症</strong>(autism或autistic
+							disorder),又叫做"早期幼儿自闭症"、
+							"儿童期自闭症"、"Kanner自闭症"、"幼儿精神病"等，在我国大陆地区多称其为"孤独症"。
+							据统计，自闭症的发病率一直呈现不断上升的趋势，但其患病原因还不确定。
+						</p>
+						<h3>自闭症儿童常表现出以下行为：</h3>
+						<ul>
+							<li>孩子对于声音没有任何反应;</li>
+							<li>孩子很难跟同龄的孩子接触;</li>
+							<li>拒绝接受一切变化;</li>
+							<li>对于身边环境非常冷漠;</li>
+							<li>会反复的学着别人说话;</li>
+							<li>特别喜欢能够旋转的东西;</li>
+							<li>莫名其妙的就会独自笑起来;</li>
+							<li>抵抗正常的学习方法;</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="title"><span>公益进行中</span><a href="">查看更多></a></div>
+				<ul>
+					<li>
+						<img src=" https://zhangjian416.github.io/zhang/j1.jpg">
+						<p class="p1">100个中国自闭孩子进步的秘密</p>
+						<p class="p2">
+							他们的进步来自哪里?
+							每个家庭都能说出一套自己的经验和方法。
+							但这些经验和方法,有没有共性？有没有共通之处？不同情况的孩子当如何...
+						</p>
+						<a href="">查看详情</a>
+					</li>
+					<li>
+						<img src="https://zhangjian416.github.io/zhang/j2.jpg">
+						<p class="p1">爱，点亮孤独的星-关爱自闭症</p>
+						<p class="p2">
+							有一群孩子，他们有着明亮的双瞳却不愿与人相视，
+							有着风铃一般的嗓音却始终沉默寡言，
+							有着健康的听力却对整个世界充耳不闻，
+							他们就像...
+						</p>
+						<a href="">查看详情</a>
+					</li>
+					<li>
+						<img src="https://zhangjian416.github.io/zhang/j3.jpg">
+						<p class="p1">"让爱来，让碍走"爱心人士世界自闭日用爱发声，守护“星星”</p>
+						<p class="p2">
+							此次由灵星组织的公益活动，分线上+线下两种方式，
+							线上由各行各业爱心人士通过拍摄短视频、照片、积极发声等方式进行公益传播；
+							线下...
+						</p>
+						<a href="">查看详情</a>
+					</li>
+					<li>
+						<img src="https://zhangjian416.github.io/zhang/j4.jpg">
+						<p class="p1">擦亮“星星”，关爱自闭症儿童</p>
+						<p class="p2">
+							【孤独的孩子✨孤单的家庭：关注孩子表现 早发现早干预】
+							自闭症，又称孤独症，属于神经系统广泛性发育障碍，以社会交往障碍、沟通...
+						</p>
+						<a href="">查看详情</a>
+					</li>
+				</ul>
+			</div>
+			<div class="picture">
+				<div class="title"><span>公益图集</span><a href="">查看更多></a></div>
+				<div class="tuji">
+					<ul>
+						<li>
+							<img src="https://zhangjian416.github.io/zhang/xy.jpg">
+							<p>心予康复园——陪读小老师</p>
+						</li>
+						<li>
+							<img src="https://zhangjian416.github.io/zhang/1jpg.jpg">
+							<p>志愿者们教孩子们画画</p>
+						</li>
+						<li>
+							<img src="https://zhangjian416.github.io/zhang/3.png">
+							<p>蓝丝带传递活动</p>
+						</li>
+						<li>
+							<img src="https://zhangjian416.github.io/zhang/2.jpg">
+							<p>志愿者和孩子们一起上课</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div>
+		</div>
+	</body>
+</html>
